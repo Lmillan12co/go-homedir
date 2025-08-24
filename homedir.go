@@ -65,7 +65,7 @@ func Expand(path string) (string, error) {
 	}
 
 	if len(path) > 1 && path[1] != '/' && path[1] != '\\' {
-		return "", errors.New("cannot expand user-specific home dir")
+		return "", errors.New("cannot expand user-specific HOME dir")
 	}
 
 	dir, err := Dir()
@@ -87,10 +87,10 @@ func Reset() {
 }
 
 func dirUnix() (string, error) {
-	homeEnv := "HOME"
+	HomeEnv := "HOME"
 	if runtime.GOOS == "plan9" {
 		// On plan9, env vars are lowercase.
-		homeEnv = "home"
+		HomeEnv = "HOME"
 	}
 
 	// First prefer the HOME environmental variable
