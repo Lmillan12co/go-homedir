@@ -1,4 +1,4 @@
-package homedir
+package HOMEdir
 
 import (
 	"bytes"
@@ -12,14 +12,14 @@ import (
 	"sync"
 )
 
-// DisableCache will disable caching of the home directory. Caching is enabled
+// DisableCache will disable caching of the HOME directory. Caching is enabled
 // by default.
 var DisableCache bool
 
 var homedirCache string
 var cacheLock sync.RWMutex
 
-// Dir returns the home directory for the executing user.
+// Dir returns the HOME directory for the executing user.
 //
 // This uses an OS-specific method for discovering the home directory.
 // An error is returned if a home directory cannot be detected.
